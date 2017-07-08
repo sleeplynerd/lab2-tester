@@ -1,4 +1,5 @@
 project( tests )
+add_definitions( -D_VARIADIC_MAX=10 )
 add_subdirectory( gtest )
 
 include_directories( ${PROJECT_BINARY_DIR}/../src )
