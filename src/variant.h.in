@@ -1,0 +1,304 @@
+#ifndef VARIANT_H
+#define VARIANT_H
+
+#ifndef STRING_H
+#define STRING_H
+#include <string>
+#endif // STRING_H
+
+#ifndef LIST_H
+#define LIST_H
+#include <list>
+#endif /* end of include guard: LIST_H */
+
+#ifndef MAP_H
+#define MAP_H
+#include <map>
+#endif /* end of include guard: MAP_H */
+
+
+#ifndef FSTREAM_H
+#define FSTREAM_H
+#include <fstream>
+#endif /* end of include guard: FSTREAM_H */
+
+// #ifndef  CTIME_H
+// #define CTIME_H
+// #include <ctime>
+// #endif /* end of include guard: CTIME_H */
+
+#ifndef ALGORITHM_H
+#define ALGORITHM_H
+#include <algorithm>
+#endif
+
+
+// Строки, пути к файлам
+#define STG_LIST_DIR "@STG_LIST_DIR@"
+#define STG_LIST_PFX "@STG_LIST_PFX@"
+
+// CMake автоматически определит наличие или отсутствие
+//   исходного кода для соответствующего варианта, установит
+//   или не установит определение VARIANT_<X>.
+//   В зависимости от этого вызов VARIANT_<X>() перенаправится
+//   либо на исходный код для соответствующего варианта,
+//   либо на функцию mock().
+
+// Block for variant 1
+#cmakedefine VARIANT_1
+#ifdef VARIANT_1
+#define VARIANT_1() variant1()
+	std::string variant1();
+#else
+#define VARIANT_1() mock()
+#endif
+
+// Block for variant 2
+#cmakedefine VARIANT_2
+#ifdef VARIANT_2
+#define VARIANT_2() variant2()
+	std::string variant2();
+#else
+#define VARIANT_2() mock()
+#endif
+
+// Block for variant 3
+#cmakedefine VARIANT_3
+#ifdef VARIANT_3
+#define VARIANT_3() variant3()
+	std::string variant3();
+#else
+#define VARIANT_3() mock()
+#endif
+
+// Block for variant 4
+#cmakedefine VARIANT_4
+#ifdef VARIANT_4
+#define VARIANT_4() variant4()
+	std::string variant4();
+#else
+#define VARIANT_4() mock()
+#endif
+
+// Block for variant 5
+#cmakedefine VARIANT_5
+#ifdef VARIANT_5
+#define VARIANT_5() variant5()
+	std::string variant5();
+#else
+#define VARIANT_5() mock()
+#endif
+
+// Block for variant 6
+#cmakedefine VARIANT_6
+#ifdef VARIANT_6
+#define VARIANT_6() variant6()
+	std::string variant6();
+#else
+#define VARIANT_6() mock()
+#endif
+
+// Block for variant 7
+#cmakedefine VARIANT_7
+#ifdef VARIANT_7
+#define VARIANT_7() variant7()
+	std::string variant7();
+#else
+#define VARIANT_7() mock()
+#endif
+
+// Block for variant 8
+#cmakedefine VARIANT_8
+#ifdef VARIANT_8
+#define VARIANT_8() variant8()
+	std::string variant8();
+#else
+#define VARIANT_8() mock()
+#endif
+
+// Block for variant 9
+#cmakedefine VARIANT_9
+#ifdef VARIANT_9
+#define VARIANT_9() variant9()
+	std::string variant9();
+#else
+#define VARIANT_9() mock()
+#endif
+
+// Block for variant 10
+#cmakedefine VARIANT_10
+#ifdef VARIANT_10
+#define VARIANT_10() variant10()
+	std::string variant10();
+#else
+#define VARIANT_10() mock()
+#endif
+
+// Block for variant 11
+#cmakedefine VARIANT_11
+#ifdef VARIANT_11
+#define VARIANT_11() variant11()
+	std::string variant11();
+#else
+#define VARIANT_11() mock()
+#endif
+
+// Block for variant 12
+#cmakedefine VARIANT_12
+#ifdef VARIANT_12
+#define VARIANT_12() variant12()
+	std::string variant12();
+#else
+#define VARIANT_12() mock()
+#endif
+
+// Block for variant 13
+#cmakedefine VARIANT_13
+#ifdef VARIANT_13
+#define VARIANT_13() variant13()
+	std::string variant13();
+#else
+#define VARIANT_13() mock()
+#endif
+
+// Block for variant 14
+#cmakedefine VARIANT_14
+#ifdef VARIANT_14
+#define VARIANT_14() variant14()
+	std::string variant14();
+#else
+#define VARIANT_14() mock()
+#endif
+
+// Block for variant 15
+#cmakedefine VARIANT_15
+#ifdef VARIANT_15
+#define VARIANT_15() variant15()
+	std::string variant15();
+#else
+#define VARIANT_15() mock()
+#endif
+
+// Block for variant 16
+#cmakedefine VARIANT_16
+#ifdef VARIANT_16
+#define VARIANT_16() variant16()
+	std::string variant16();
+#else
+#define VARIANT_16() mock()
+#endif
+
+// Block for variant 17
+#cmakedefine VARIANT_17
+#ifdef VARIANT_17
+#define VARIANT_17() variant17()
+	std::string variant17();
+#else
+#define VARIANT_17() mock()
+#endif
+
+// Block for variant 18
+#cmakedefine VARIANT_18
+#ifdef VARIANT_18
+#define VARIANT_18() variant18()
+	std::string variant18();
+#else
+#define VARIANT_18() mock()
+#endif
+
+// Block for variant 19
+#cmakedefine VARIANT_19
+#ifdef VARIANT_19
+#define VARIANT_19() variant19()
+	std::string variant19();
+#else
+#define VARIANT_19() mock()
+#endif
+
+// Block for variant 20
+#cmakedefine VARIANT_20
+#ifdef VARIANT_20
+#define VARIANT_20() variant20()
+	std::string variant20();
+#else
+#define VARIANT_20() mock()
+#endif
+
+//#define VARIANT(vrnt) std##:##:##string variant ## vrnt ## ( ## )
+
+std::string variant( int vrnt );
+inline std::string mock() {return "";}
+
+class Variant {
+public:
+
+	/**
+	 * Проверяет, нарушен ли порядок следования дуг.
+	 */
+	bool isOrdered();
+
+	/**
+	 * Проверяет, случайны ли результаты выполнения программы
+	 */
+	bool isRandom();
+
+	/**
+	 * Проверяет, что все дуги графа задействованы
+	 */
+	bool isFull();
+
+	/**
+	 * Проверяет, что предполагаемое параллельное выполнение не выглядит
+	 * последовательным (AAABBB) вместо (ABBABA)
+	 */
+	bool isParallel();
+
+	/**
+	 * Заполнение списка mStages из файла
+	 * @param variant Номер варианта
+	 */
+
+	Variant( int variant );
+
+	/**
+	 * Демо, граф №1, вариант 1
+	 * Граф: https://github.com/sleeplynerd/lab3-tester/blob/master/demo%20picture/1.png?raw=true
+	 */
+	Variant();
+
+
+private:
+	struct Node {
+		char symbol;
+		std::string forbidden;
+		Node( char, std::string );
+	};
+
+	static const int DEMO_VRNT = -1;
+	const int VRNT;
+
+	/**
+	 * Содержит список вершин графа, которые не могут
+	 *   встречаться после указанной вершины symbol.
+	 */
+	std::list<Node> mForbNodes;
+
+	/**
+	 * Алвавит графа
+	 */
+	std::string mAlphabet;
+
+	/**
+	 * Возвращает вывод в виде последовательности литер вершин графа
+	 */
+	std::string getOutput();
+
+
+	/**
+	 * Проверяет, что длина вывода больше длины алфавита mAlphabet.
+	 * @return true, если длина вывода больше длины алфавита
+	 */
+	bool isLongOutput();
+
+};
+#endif //VARIANT_H
