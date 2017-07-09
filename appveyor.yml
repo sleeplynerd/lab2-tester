@@ -19,4 +19,5 @@ build_script:
     cmake ..
     & cmake --build .
     & cd test/Debug
+    & dir
     & tests.exe
