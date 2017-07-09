@@ -18,5 +18,5 @@ build_script:
 - ps: |
     cmake ..
     & cmake --build .
-    & cd test/Debug
+#    & cd test/Debug
     & tests
