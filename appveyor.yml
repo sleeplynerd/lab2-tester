@@ -19,4 +19,4 @@ build_script:
     cmake ..
     & cmake --build .
     & cd test/Debug
-    & tests.exe
+    &tests.exe
