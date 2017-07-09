@@ -18,4 +18,4 @@ build_script:
 - ps: |
     cmake ..
     & cmake --build .
-    & dir /s tests.exe
+    & dir
