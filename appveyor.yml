@@ -10,7 +10,7 @@ platform:
     - Win32
 
 before_build:
-    -ps: |
+    - ps: |
     md _build
     cd _build
 
