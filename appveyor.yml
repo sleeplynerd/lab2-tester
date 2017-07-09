@@ -1,7 +1,7 @@
 os: Visual Studio 2012
 
 environment:
-    Toolset: v11
+    Toolset: v110
 
 configuration:
     - Debug
