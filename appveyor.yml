@@ -10,12 +10,12 @@ platform:
     - Win32
 
 before_build:
-    - ps: |
+- ps: |
     md _build
     cd _build
 
 build_script:
-    ps: |
+- ps: |
     cmake ..
     & cmake --build .
     & cd test/Debug
