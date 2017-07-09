@@ -15,7 +15,7 @@ before_build:
     cd _build
 
 build_script:
-- ps: |
+- cmd: |
     cmake ..
     & cmake --build .
     & cd test/Debug
