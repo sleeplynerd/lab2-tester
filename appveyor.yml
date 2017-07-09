@@ -20,4 +20,4 @@ build_script:
     & cmake --build .
     & cd test/Debug
     & dir
-    & "tests.exe"
+    & .\appveyor tests.exe
